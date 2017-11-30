@@ -18,6 +18,52 @@ namespace ask_me_a_question
 
             programInfo();
 
+            // Create random object to return randomize numbers
+            Random randomObj = new Random();
+
+            while (true)
+            {
+                // Ask user for question and store in theQuestion variable
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("Ask Me a Question: ");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                string theQuestion = Console.ReadLine();
+
+                if (theQuestion.ToLower() == "quit")
+                {
+                    break;
+                }
+
+                // Get random number
+                int randomNum = randomObj.Next(4);
+                
+                // Random number to display answer
+                switch(randomNum)
+                {
+                    case 0:
+                        {
+                            Console.WriteLine("YES!");
+                            break;
+                        }
+                    case 1:
+                        {
+                            Console.WriteLine("No!");
+                            break;
+                        }
+                    case 2:
+                        {
+                            Console.WriteLine("Definitely NO!");
+                            break;
+                        }
+                    case 3:
+                        {
+                            Console.WriteLine("You're awesome, YES!");
+                            break;
+                        }
+                }
+            }
+
+
             // Original color 
             Console.ForegroundColor = origColor;
         }
@@ -39,6 +85,9 @@ namespace ask_me_a_question
             Console.Write("Question ");
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("By: Dennis Luo ");
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine("Type 'quit' anytime to leave program");
+            
         }
     }
 }
